@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>images/spark_display_5.jpg</file>
+        <file>ui/Battery_temp_gauge.qml</file>
+        <file>ui/Coolant_gauge.qml</file>
+        <file>ui/Handshake_alert.qml</file>
+        <file>ui/Handshake_check.qml</file>
+        <file>ui/MC_gauge.qml</file>
+        <file>ui/Mph.qml</file>
+        <file>ui/Sum_voltage_gauge.qml</file>
+    </qresource>
+</RCC>
