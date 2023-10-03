@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
     model *mdl = new model();
 
     mdl->setSpeed(90);
+    mdl->setBatteryTemp(68);
 
     QQmlApplicationEngine *engine = new QQmlApplicationEngine();
     engine->rootContext()->setContextProperty("mdl", mdl);
