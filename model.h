@@ -2,6 +2,8 @@
 #define MODEL_H
 
 #include <QObject>
+#include <QDebug>
+
 class model : public QObject
 {
     Q_OBJECT
@@ -26,7 +28,7 @@ class model : public QObject
     Q_PROPERTY(double speed READ speed WRITE setSpeed NOTIFY SpeedChanged)
 
 
-public:
+public slots:
     //model(QObject *parent = NULL); DOESNT LIKE THIS LINE FOR SOME REASON?? ERROR: symbol(s) not found for architecture x86_64
 
     void setSpeed(const double&v) {
@@ -34,6 +36,7 @@ public:
         {
             _speed = v;
             emit SpeedChanged();
+            qDebug() << "speed is now " << _speed << "\n";
         }
     }
     void setAnalog1(const int &v)

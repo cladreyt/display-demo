@@ -20,6 +20,9 @@ ApplicationWindow {
         width: parent.width
         height: parent.height
 
+        // ******** ROTATING THE DISPLAY 180 DEGREES ********
+        //transform: Rotation { origin.x: 512; origin.y: 300; angle: 180}
+
         model: VisualItemModel {
             Frame1 {}
 

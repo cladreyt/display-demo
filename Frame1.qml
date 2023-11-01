@@ -18,6 +18,18 @@ Item {
         source: "images/spark_display_5.jpg"
     }
 
+    // ******** TESTING SLIDER ********
+    Slider {
+        id: sliderHorizontal
+        x: 426
+        y: 491
+        width: 371
+        height: 22
+        minimumValue: 0
+        maximumValue: 150
+        onValueChanged: mdl.setSpeed(value)
+    }
+
     // ******** GAUGES ********
     MC_gauge {
         id: mc_gauge
