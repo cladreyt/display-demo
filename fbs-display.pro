@@ -1,12 +1,14 @@
 TEMPLATE = app
-TARGET = fbs-display
+TARGET = fbs-display # name of the executable to be generated, instead of just .pro file name
 
-QT += qml quick
+QT += qml quick core serialport network sensors
 CONFIG += c++11
 
 SOURCES += main.cpp
 
 RESOURCES += qml.qrc
+
+# LIBS += -lgps # can't find this library on a regular system (that isn't our display)
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -19,6 +21,7 @@ QML_DESIGNER_IMPORT_PATH =
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
+DEFINES += Q_OS_EMBEDDED
 
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.

@@ -8,12 +8,13 @@ import "ui"
 ApplicationWindow {
     id: applicationWindow
     visible: true
-    title: "fbs-display"
+    title: "fbs-display" //setting the title of the window on your laptop etc
 
     // ******** DISPLAY PIXEL DIMENSIONS ********
     width: 1024
     height: 600
 
+    // ******** LIST OF SCREENS HORIZONTALLY ********
     ListView {
         id: rootlist
         width: parent.width
@@ -42,6 +43,6 @@ ApplicationWindow {
         snapMode: ListView.SnapOneItem
         highlightRangeMode: ListView.StrictlyEnforceRange
         focus: true
-    }
+    }// END LIST OF SCREENS
 
 }// END APPLICATION WINDOW

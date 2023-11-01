@@ -101,7 +101,7 @@ Item {
             verticalCenter: parent.verticalCenter
         }
         visible: {
-            if(control.pre_handshake === false){ return true }
+            if(control.pre_handshake === false){ return true } // control is not defined here, throwing runtime error
             else{ return false }
         }
     }
