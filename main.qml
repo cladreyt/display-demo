@@ -14,7 +14,7 @@ ApplicationWindow {
     width: 1024
     height: 600
 
-    // ******** LIST OF SCREENS HORIZONTALLY ********
+    // ******** LIST OF SCREENS VERTICALLY ********
     ListView {
         id: rootlist
         width: parent.width

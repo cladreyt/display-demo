@@ -12,6 +12,9 @@ Item {
     property color primaryColor: "#ff6725"
     property color secondaryColor: "#52adff"
     property color thirdColor: "black"
+    property string button_text: "AAA" // these are defaults
+    // custom state for seeing if timer was full
+    property int full: 0
     width: size
     height: size
 
@@ -61,37 +64,26 @@ Item {
         }
     }
 
-    //start timers etc
-    MouseArea {
-        id: pressArea
-        anchors.fill: parent
-        onPressed: {
-            noHoldTimer.stop()
-            holdTimer.start()
-        }
-
-        onReleased: {
-            holdTimer.stop()
-            noHoldTimer.start()
-        }
-
-        Timer {
-            id: holdTimer
-            interval: 3
-            repeat: true
-            onTriggered: {
-                if (value < 1) value += 0.004;
-            }
-        }
-
-        Timer {
-            id: noHoldTimer
-            interval: 2
-            repeat: true
-            onTriggered: {
-                if (value > 0) value -= 0.002;
-            }
-        }
+    // text in the middle
+    Text {
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        text: button_text
+        color: primaryColor
+        font.pixelSize: 38
+        font.bold: true
     }
-    // end timers
+
+    // outline of button in primary color
+    Rectangle {
+        width: size - 25
+        height: size - 25
+        radius: size - 25
+        anchors {
+            horizontalCenter: parent.horizontalCenter
+            verticalCenter: parent.verticalCenter
+        }
+        color: parent.primaryColor
+        z: -1
+    }
 }

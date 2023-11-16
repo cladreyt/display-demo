@@ -12,5 +12,14 @@
         <file>Frame1.qml</file>
         <file>Circle_gauge.qml</file>
         <file>Frame2.qml</file>
+        <file>images/spark_lightning.png</file>
+        <file>images/yellow_lightning.png</file>
+        <file>images/darker_lightning.png</file>
+        <file>images/black_lightning.png</file>
+        <file>images/blue_lightning.png</file>
+        <file>images/new_darker_lightning.png</file>
+        <file>images/new_yellow_lightning.png</file>
+        <file>images/white_lightning.png</file>
+        <file>images/cool_lightning.png</file>
     </qresource>
 </RCC>
