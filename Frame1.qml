@@ -22,7 +22,7 @@ Item {
     Slider {
         id: sliderHorizontal
         x: 426
-        y: 491
+        y: 200
         width: 371
         height: 22
         minimumValue: 0
@@ -115,6 +115,38 @@ Item {
         visible: {
             if(control.pre_handshake === false){ return true } // control is not defined here, throwing runtime error
             else{ return false }
+        }
+    }
+
+    // ******** LAUNCH CONTROL BUTTON ********
+    Rectangle {
+        width: 300
+        height: 75
+        anchors.horizontalCenter: parent.horizontalCenter
+        y: 470
+        color: "black"
+        Text {
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            text: "CONTROLS"
+            font.bold: true
+            font.pixelSize: 38
+            color: "gray"
+            opacity: 0.5
+        }
+        Rectangle {
+            width: 310
+            height: 85
+            z:-1
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            color: "gray"
+            opacity: 0.5
+        }
+        MouseArea {
+            id: continue_button
+            anchors.fill: parent
+            onPressed: rootlist.currentIndex = 0
         }
     }
 

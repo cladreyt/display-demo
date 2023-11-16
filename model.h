@@ -31,158 +31,25 @@ class model : public QObject
 public slots:
     //model(QObject *parent = NULL); DOESNT LIKE THIS LINE FOR SOME REASON?? ERROR: symbol(s) not found for architecture x86_64
 
-    void setSpeed(const double&v) {
-        if (v != _speed)
-        {
-            _speed = v;
-            emit SpeedChanged();
-            qDebug() << "speed is now " << _speed << "\n";
-        }
-    }
-    void setAnalog1(const int &v)
-    {
-        if (v != _analog1)
-        {
-            _analog1 = v;
-            emit analog1Changed();
-        }
-    }
-
-    void setAnalog2(const int &v)
-    {
-        if (v != _analog2)
-        {
-            _analog2 = v;
-            emit analog2Changed();
-        }
-    }
-
-    void setAnalog3(const int &v)
-    {
-        if (v != _analog3)
-        {
-            _analog3 = v;
-            emit analog3Changed();
-        }
-    }
-
-    void setAnalog4(const int &v)
-    {
-        if (v != _analog4)
-        {
-            _analog4 = v;
-            emit analog4Changed();
-        }
-    }
-
-    void setAnalog5(const int &v)
-    {
-        if (v != _analog5)
-        {
-            _analog5 = v;
-            emit analog5Changed();
-        }
-    }
-
-    void setAnalog6(const int &v)
-    {
-        if (v != _analog6)
-        {
-            _analog6 = v;
-            emit analog6Changed();
-        }
-    }
-
-    void setRpm(const double &v)
-    {
-        if (v != _rpm)
-        {
-            _rpm = v;
-            emit rpmChanged();
-        }
-    }
-
-    void setRotate(const int &v)
-    {
-        if (v != _rotate)
-        {
-            _rotate = v;
-            emit rotateChanged();
-        }
-    }
-
-    void setEthIp(const QString &v)
-    {
-        if (v != _ethIp)
-        {
-            _ethIp = v;
-            emit ethIpChanged();
-        }
-    }
-
-    void setBacklight(const int &v)
-    {
-        if (v != _backlight)
-        {
-            _backlight = v;
-            emit backlightChanged();
-        }
-    }
-    void setCellVoltage(const double &v)
-    {
-        if(v != _cellVoltage) {
-            _cellVoltage = v;
-            emit cellVoltageChanged();
-        }
-    }
-    void setBatteryTemp(const int &v)
-    {
-        if (v != _batteryTemp) {
-            _batteryTemp = v;
-            emit batteryTempChanged();
-        }
-    }
-    void setHandshake (const bool &v)
-    {
-        if (v != _handshake) {
-            _handshake = v;
-            emit handshakeChanged();
-        }
-    }
-    void setPackVoltage (const double &v)
-    {
-        if (v != _packVoltage) {
-            _packVoltage = v;
-            emit packVoltageChanged();
-        }
-    }
-    void setDCLinkV (const double &v)
-    {
-        if (v != _DCLinkV) {
-            _DCLinkV = v;
-            emit DCLinkVChanged();
-        }
-    }
-    void setMCTemp (const int &v)
-    {
-        if (v != _MCTemp) {
-            _MCTemp = v;
-            emit MCTempChanged();
-        }
-    }
-    void setMotorTemp (const int &v)
-    {
-        if (v != _MotorTemp) {
-            _MotorTemp = v;
-            emit MotorTempChanged();
-        }
-    }
-    void setNumBatteryCells(const int &v) {
-        if (v != _numBatteryCells) {
-            _numBatteryCells = v;
-            emit numBatteryCellsChanged();
-        }
-    }
+    void setSpeed(const double&v);
+    void setAnalog1(const int &v);
+    void setAnalog2(const int &v);
+    void setAnalog3(const int &v);
+    void setAnalog4(const int &v);
+    void setAnalog5(const int &v);
+    void setAnalog6(const int &v);
+    void setRpm(const double &v);
+    void setRotate(const int &v);
+    void setEthIp(const QString &v);
+    void setBacklight(const int &v);
+    void setCellVoltage(const double &v);
+    void setBatteryTemp(const int &v);
+    void setHandshake (const bool &v);
+    void setPackVoltage (const double &v);
+    void setDCLinkV (const double &v);
+    void setMCTemp (const int &v);
+    void setMotorTemp (const int &v);
+    void setNumBatteryCells(const int &v);
 
 signals:
     void rpmChanged();
@@ -204,83 +71,29 @@ signals:
     void MotorTempChanged();
     void SpeedChanged();
     void numBatteryCellsChanged();
+
 public:
-    double speed() const
-    {
-        return _speed;
-    }
-    double rpm() const
-    {
-        return _rpm;
-    }
+    double speed() const;
+    double rpm() const;
+    int rotate() const;
+    QString ethIp() const;
+    int backlight() const;
 
-    int rotate() const
-    {
-        return _rotate;
-    }
+    double cellVoltage();
+    int batteryTemp();
+    int analog1();
+    int analog2();
+    int analog3();
+    int analog4();
+    int analog5();
+    int analog6();
+    bool handshake();
+    double packVoltage();
+    double DCLinkV();
+    int MCTemp();
+    int MotorTemp();
+    int numBatteryCells();
 
-    QString ethIp() const
-    {
-        return _ethIp;
-    }
-
-    int backlight() const
-    {
-        return _backlight;
-    }
-
-    double cellVoltage()
-    {
-        return _cellVoltage;
-    }
-    int batteryTemp()
-    {
-        return _batteryTemp;
-    }
-    int analog1()
-    {
-        return _analog1;
-    }
-    int analog2()
-    {
-        return _analog2;
-    }
-    int analog3()
-    {
-        return _analog3;
-    }
-    int analog4()
-    {
-        return _analog4;
-    }
-    int analog5()
-    {
-        return _analog5;
-    }
-    int analog6()
-    {
-        return _analog6;
-    }
-    bool handshake()
-    {
-        return _handshake;
-    }
-    double packVoltage()
-    {
-        return _packVoltage;
-    }
-    double DCLinkV(){
-        return _DCLinkV;
-    }
-    int MCTemp(){
-        return _MCTemp;
-    }
-    int MotorTemp(){
-        return _MotorTemp;
-    }
-    int numBatteryCells(){
-        return _numBatteryCells;
-    }
 private:
     double _rpm = 0;
     int _rotate = 0;

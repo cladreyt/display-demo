@@ -10,5 +10,7 @@
         <file>ui/Mph.qml</file>
         <file>ui/Sum_voltage_gauge.qml</file>
         <file>Frame1.qml</file>
+        <file>Circle_gauge.qml</file>
+        <file>Frame2.qml</file>
     </qresource>
 </RCC>

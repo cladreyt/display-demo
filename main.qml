@@ -24,28 +24,24 @@ ApplicationWindow {
         //transform: Rotation { origin.x: 512; origin.y: 300; angle: 180}
 
         model: VisualItemModel {
-            Frame1 {}
+            Frame2 {}
 
-            Item {
-                width: rootlist.width
-                height: rootlist.height
-                Rectangle {
-                    width: parent.width
-                    height: parent.height
-                    color: "lightgreen"
-                    Text {
-                        text: "Screen 2"
-                        anchors.centerIn: parent
-                    }
-                }
-            }
+            Frame1 {}
         }
 
-        orientation: ListView.Horizontal
+        orientation: ListView.Vertical
         //flickableDirection: Flickable.HorizontalFlick
-        snapMode: ListView.SnapOneItem
+        snapMode: ListView.SnapToItem
         highlightRangeMode: ListView.StrictlyEnforceRange
-        focus: true
+
+        highlightMoveDuration: 400
+        highlightMoveVelocity: -1
+
+        boundsBehavior: Flickable.StopAtBounds
+        interactive: false
+        currentIndex: 0
+
+
     }// END LIST OF SCREENS
 
 }// END APPLICATION WINDOW

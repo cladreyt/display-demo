@@ -5,7 +5,8 @@ QT += qml quick core serialport network sensors
 CONFIG += c++11
 # CONFIG += console # add this line to pring qDebug output on console
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    model.cpp
 
 RESOURCES += qml.qrc
 
